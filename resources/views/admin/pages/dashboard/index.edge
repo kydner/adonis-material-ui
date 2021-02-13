@@ -1,0 +1,13 @@
+@layout('admin.layouts/default')
+@section('style')
+ {{--  import style css  --}}
+@endsection
+
+@section('content')
+  <p> Here comes the list of posts {{ title }} {{ test() }}</p>
+@endsection
+
+@section('script')
+  @super
+  {{--  import script  --}}
+@endsection

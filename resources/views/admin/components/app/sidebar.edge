@@ -1,0 +1,30 @@
+@each(master in items)
+<ul class="nav">
+	@if(master.items)
+	<li class="{{url === route(master.route)? 'active': ''}}">
+		<a data-toggle="collapse" href="#{{ master.id }}">
+			<i class="material-icons">{{ master.icon }}</i>
+			<p>{{ master.title }}
+				<b class="caret"></b>
+			</p>
+		</a>
+		<div class="collapse {{url === route(master.route)+'/form' || url === route(master.route)? 'in': ''}}" id="{{ master.id }}" >
+			@each(child in master.items)			
+			<ul class="nav">
+				<li class="{{url === route(child.route)? 'active': ''}}">
+					<a href="{{ route(child.route) }}" class="">{{ child.title }}</a>
+				</li>
+			</ul>
+			@endeach
+		</div>
+	</li>
+	@else
+	<li class="{{url === route(master.route)? 'active': ''}}">
+		<a href="{{ route(master.route) }}">
+			<i class="material-icons">{{ master.icon }}</i>
+			<p>{{ master.title }}</p>
+		</a>
+	</li>
+	@endif
+</ul>
+@endeach

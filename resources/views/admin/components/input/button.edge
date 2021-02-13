@@ -1,0 +1,6 @@
+<button type="{{ type || 'button' }}" {{ disabled ? 'disabled' : ''}} class="btn {{ variant ? 'btn-'+variant : '' }} {{ size ? 'btn-'+size : ''}} {{ round ? 'btn-'+round : '' }}">
+	@if(icon)
+		<i class="material-icons">{{ icon }}</i>
+	@endif
+	{{ text || '' }}
+</button>

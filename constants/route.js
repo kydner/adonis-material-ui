@@ -1,0 +1,6 @@
+exports.LOGIN = 'login'
+exports.POST_LOGIN = 'postLogin'
+exports.LOGOUT = 'logout'
+exports.ADMIN_DASHBOARD = 'admin.dashboard'
+exports.ADMIN_USER_FORM = 'admin.user.form'
+exports.ADMIN_USER_LIST = 'admin.user.list'

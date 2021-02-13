@@ -1,0 +1,14 @@
+
+<div class="card">
+	@if(icon)
+	<div class="card-header card-header-icon" data-background-color="{{ color || 'blue' }}">
+		<i class="material-icons">{{ icon || 'list' }}</i>
+	</div>
+	@endif
+	<div class="card-content">
+		<h4 class="card-title">{{ title || 'Title' }}</h4>
+		<div class="row">
+				@!yield($slot.main)
+		</div>
+	</div>
+</div>
