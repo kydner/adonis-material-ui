@@ -3,7 +3,7 @@
 /** @typedef {import('@adonisjs/framework/src/Response')} Response */
 /** @typedef {import('@adonisjs/framework/src/View')} View */
 
-// const $route = require('../../constants/Route')
+const $route = require('../../constants/Route')
 
 class RedirectIfNoAuth {
   /**
@@ -12,13 +12,12 @@ class RedirectIfNoAuth {
    * @param {Function} next
    */
   async handle ({ response, auth }, next) {
-    await next()
     // call next to advance the request
-    // try {
-    //   await auth.check() && await next()
-    // } catch (error) {
-    //   response.route($route.LOGOUT)
-    // }
+    try {
+      await auth.check() && await next()
+    } catch (error) {
+      response.route($route.LOGOUT)
+    }
   }
 }
 
