@@ -1,0 +1,9 @@
+<div class="form-group label-floating is-empty">
+  <label class="control-label">
+      {{ label }}
+      @if(required)
+      <small class="text-danger">*</small>
+      @endif
+  </label>
+  @!component('admin.components.input.default.text-box', { label, required, name, type, disabled })
+<span class="material-input"></span></div>

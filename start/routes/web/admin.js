@@ -14,5 +14,5 @@ Route.group(() => {
   Route.get('/user/:id', 'UserController.getOne')
 })
   .prefix('admin')
-  .middleware(['redirectIfNoAuth', 'auth'])
+  // .middleware(['redirectIfNoAuth', 'auth'])
 Route.on('/').render('welcome')

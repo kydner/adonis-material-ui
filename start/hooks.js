@@ -8,6 +8,7 @@ hooks.after.providersBooted(() => {
   View.global('appTitle', () => 'Website ABC')
   View.global('sidebars', $layout.sidebars)
   View.global('test', () => new Date())
+  View.global('now', () => new Date())
   View.global('$route', $route)
   View.global('viewUrl', (path) => Helpers.viewsPath(path))
 })

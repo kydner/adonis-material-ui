@@ -3,21 +3,22 @@
 
 /** @type {import('@adonisjs/lucid/src/Schema')} */
 const Schema = use('Schema')
-const $db = require('./../../constants/database')
+const {COL_ID, COL_USER_ID, COL_TOKEN, COL_TYPE, COL_IS_REVOKED } = require('./../../constants/database/column')
+const { TBL_TOKENS, TBL_USERS  } = require('./../../constants/database/table')
 class TokensSchema extends Schema {
   up () {
-    this.create($db.TBL_TOKENS, (table) => {
-      table.uuid($db.COL_ID).primary()
-      table.uuid($db.COL_USER_ID).references($db.COL_ID).inTable($db.TBL_USERS)
-      table.string($db.COL_TOKEN, 255).notNullable().unique().index()
-      table.string($db.COL_TYPE, 80).notNullable()
-      table.boolean($db.COL_IS_REVOKED).defaultTo(false)
+    this.create(TBL_TOKENS, (table) => {
+      table.uuid(COL_ID).primary()
+      table.uuid(COL_USER_ID).references(COL_ID).inTable(TBL_USERS)
+      table.string(COL_TOKEN, 255).notNullable().unique().index()
+      table.string(COL_TYPE, 80).notNullable()
+      table.boolean(COL_IS_REVOKED).defaultTo(false)
       table.timestamps()
     })
   }
 
   down () {
-    this.drop($db.TBL_TOKENS)
+    this.drop(TBL_TOKENS)
   }
 }
 

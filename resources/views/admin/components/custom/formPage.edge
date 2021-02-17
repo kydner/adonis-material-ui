@@ -1,17 +1,20 @@
 <div class="row">
 	<div class="col-md-12">
-		@component('admin.components.custom.card', { title: 'Tambah', icon: 'list'})
-			<div class="col-lg-12">
-				@!component('admin.components.input.button', {
-					text: 'Tambah',
-					icon: 'list',
-					variant: 'warning',
-				})
-
-			</div>
-			<div class="col-lg-12">
-				@!yield($slot.main)
-			</div>
+		@component('admin.components.custom.card', { title: 'Tambah', icon: 'assignment'})
+			<form action="{{ action || '#'}}" method="{{ method || 'POST'}}">
+				<div class="col-lg-12">
+					@!component('admin.components.input.button', {
+						text: 'Tambah',
+						icon: 'list',
+						variant: 'warning',
+						type: 'submit'
+					})
+	
+				</div>
+				<div class="col-lg-12">
+					@!yield($slot.main)
+				</div>
+			</form>
 		@endcomponent
 	</div>
 </div>

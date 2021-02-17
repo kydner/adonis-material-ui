@@ -1,0 +1,8 @@
+<input 
+  class="form-control" 
+  name="{{ name }}" 
+  type="{{ type || 'text' }}" 
+  required="{{ required || false }}" 
+  aria-required="{{ required || false }}"
+  {{ disabled ? 'disabled' : '' }}
+/>

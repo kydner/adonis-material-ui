@@ -1,0 +1,18 @@
+<div class="form-group mt-0 pt-0">
+  <label class="label-control small my-0 py-0" style="font-size:1.2rem;">{{ label }}</label>
+  <input type="text" class="form-control {{ ['datetimepicker', 'datepicker', 'timepicker'].includes(type+'picker')? type+'picker' : 'datepicker' }} mt-0 pt-0" value="{{ value || null }}" name="{{ name }}" />
+</div>
+
+<script src="{{ assetsUrl('assets/admin') }}/js/jquery-3.1.1.min.js" type="text/javascript"></script>
+<!--  Plugin for Date Time Picker and Full Calendar Plugin-->
+<script src="{{ assetsUrl('assets/admin') }}/js/moment.min.js"></script>
+<!-- DateTimePicker Plugin -->
+<script src="{{ assetsUrl('assets/admin') }}/js/bootstrap-datetimepicker.js"></script>
+<!-- Material Dashboard DEMO methods, don't include it in your project! -->
+<script src="{{ assetsUrl('assets/admin') }}/js/demo.js"></script>
+<script type="text/javascript">
+
+  $(document).ready(function() {
+    demo.initFormExtendedDatetimepickers();
+  });
+</script>

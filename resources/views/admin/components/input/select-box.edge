@@ -1,0 +1,10 @@
+<div class="">
+  <select class="selectpicker pt-1" data-style="select-with-transition" {{ multiple ? 'multiple': '' }} title="Choose {{ label }}" data-size="7">
+    <option disabled> Choose {{ label }}</option>
+    @if(dataSource.length)
+      @each(data in dataSource)
+        <option value="{{ data[valueExpr || 'id'] }}">{{data[displayExpr || 'name']}} </option>
+      @endeach
+    @endif
+  </select>
+</div>
